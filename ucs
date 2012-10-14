@@ -1,0 +1,8 @@
+
+UC01	user maps tasks and activity profiles
+UC02	user configures storage
+UC03	user queries time allocation stats
+UC04	user exports time allocation stats
+UC05	user starts logging
+UC06	user stops logging
+
