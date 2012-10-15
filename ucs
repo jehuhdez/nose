@@ -1,8 +1,33 @@
 
 UC01	user maps tasks and activity profiles
+1	user opens nose logger
+2	system displays today's tasks from RTM
+3	system displays stored activity profiles
+4	user selects one task
+5	user specifies one activity profile (program + work item description)
+6	user saves the map
+
 UC02	user configures storage
+1	user opens nose logger
+2	user selects storage options
+3	user provides account information
+4	user tests storage account
+
 UC03	user queries time allocation stats
+1	user opens nose viewer
+2	user selects time range to display
+
 UC04	user exports time allocation stats
+1	user opens nose viewer
+2	user selects time range to display
+3	user exports allocation stats
+
 UC05	user starts logging
+1	user opens nose logger
+2	diagnostics are run
+3	user signals start
+
 UC06	user stops logging
+1	user opens nose logger
+2	user signals stop
 
