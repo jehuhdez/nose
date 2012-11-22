@@ -15,7 +15,7 @@ namespace Nose.Core
             ProcessLogger ctrl = new ProcessLogger(dbox);
             ctrl.start();
             Thread.Sleep(120000);
-            ctrl.stop();
+            ctrl.stop("");
 
             //RTMFacade rtm = new RTMFacade();
             //Console.WriteLine("authenticated: " + rtm.Authenticated);

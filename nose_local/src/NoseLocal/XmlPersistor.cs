@@ -57,21 +57,31 @@ namespace Nose.Core
             }
         }
 
-        public void logEntry(string pProcessName, string pWindowTitle)
+        private void logEntry(string pType, string pName, string pDescription)
         {
             DateTime now = DateTime.Now;
             setLastDuration(now);
 
-            XmlElement log = _doc.CreateElement("application");
+            XmlElement log = _doc.CreateElement(pType);
             log.SetAttribute("start", now.ToString());
             log.SetAttribute("durationInSecs", "0.00");
-            log.SetAttribute("name", pProcessName);
-            log.SetAttribute("description", pWindowTitle);
+            log.SetAttribute("name", pName);
+            log.SetAttribute("description", pDescription);
 
             _appLogNode.AppendChild(log);
 
             _lastEntry = log;
             _lastLog = now;
+        }
+
+        private void logEvent(string pEventInfo)
+        {
+            logEntry("event", pEventInfo, String.Empty);
+        }
+
+        public void logEntry(string pProcessName, string pWindowTitle)
+        {
+            logEntry("application", pProcessName, pWindowTitle);
         }
 
         public void reset()
@@ -97,9 +107,10 @@ namespace Nose.Core
             return new XmlLogPersistor(doc);
         }
 
-        internal void closeLog()
+        internal void closeLog(string pEvent)
         {
             setLastDuration(DateTime.Now);
+            logEvent(pEvent);
         }
     }
 }

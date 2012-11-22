@@ -59,7 +59,7 @@ namespace LocalMapper
                 case SessionSwitchReason.SessionLock:
                     {
                         if (_logging)
-                            _mapper.stopLogging();
+                            _mapper.stopLogging("session locked");
                     }
                     break;
 
@@ -67,6 +67,12 @@ namespace LocalMapper
                     {
                         if (_logging)
                             _mapper.startLogging();
+                    }
+                    break;
+                case SessionSwitchReason.SessionLogoff:
+                    {
+                        if(_logging)
+                            _mapper.stopLogging("session terminated");
                     }
                     break;
             }

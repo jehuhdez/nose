@@ -157,9 +157,9 @@ namespace Nose.Core
             _logger.start();
         }
 
-        public void stopLogging()
+        public void stopLogging(string pEvent = "Unknown")
         {
-            _logger.stop();
+            _logger.stop(pEvent);
         }
 
         public void map(string pTaskID, string pProgramName, string pPattern)

@@ -95,14 +95,14 @@ namespace Nose.Core
             _isLogging = true;
         }
 
-        public void stop()
+        public void stop(string pEvent)
         {
             _isLogging = false;
 
             _localSyncTimer.Stop();
             _cloudSyncTimer.Stop();
 
-            _logger.closeLog();
+            _logger.closeLog(pEvent);
             sync();
 
             _cancelTokenSrc.Cancel(false);

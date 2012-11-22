@@ -18,7 +18,7 @@ namespace Nose.Core
         private XmlLogPersistor _xmlLog;
         private XmlActivitiesPersistor _xmlAct;
 
-        private DateTime _lastLog;
+        private DateTime _lastCloudSync;
 
         public DataAccess(ICloudStorage pStorage)
         {
@@ -50,6 +50,18 @@ namespace Nose.Core
             Console.WriteLine("==> local");
         }
 
+        private void cloudSyncActivities()
+        {
+            _storage.save(getActivitiesFilename(), _xmlAct.getDocument(), _encryptor);
+            _storage.save(getActivitiesFilename() + ".xml", _xmlAct.getDocument(), null);
+        }
+
+        private void cloudSyncLog()
+        {
+            _storage.save(getLogFilename(), _xmlLog.getDocument(), _encryptor);
+            _storage.save(getLogFilename() + ".xml", _xmlLog.getDocument(), null);
+        }
+
         public void cloudSync()
         {
             if (_xmlAct == null)
@@ -61,20 +73,30 @@ namespace Nose.Core
                     _xmlAct = new XmlActivitiesPersistor(Environment.UserName);
             }
 
+            if(DateTime.Now.Day != _lastCloudSync.Day)
+            {
+                if (_xmlLog != null)
+                {
+                    _xmlLog.closeLog("DayEnded");
+                    cloudSyncLog();
+                }
+
+                _xmlLog = null;
+            }
+
             if (_xmlLog == null)
             {
                 string xmlRead = _storage.read(getLogFilename(), _encryptor);
                 if (!String.IsNullOrEmpty(xmlRead))
                     _xmlLog = XmlLogPersistor.parse(xmlRead);
                 else
-                    _xmlLog = new XmlLogPersistor(Environment.UserName, "GT1000");
+                    _xmlLog = new XmlLogPersistor(Environment.UserName, Environment.MachineName);
             }
 
-            _storage.save(getActivitiesFilename(), _xmlAct.getDocument(), _encryptor);
-            _storage.save(getActivitiesFilename() + ".xml", _xmlAct.getDocument(), null);
+            cloudSyncActivities();
+            cloudSyncLog();
 
-            _storage.save(getLogFilename(), _xmlLog.getDocument(), _encryptor);
-            _storage.save(getLogFilename() + ".xml", _xmlLog.getDocument(), null);
+            _lastCloudSync = DateTime.Now;
 
             Console.WriteLine("==> cloud");
         }
@@ -100,9 +122,9 @@ namespace Nose.Core
             return _xmlAct.getTaskProfiles(pTaskID);
         }
 
-        internal void closeLog()
+        internal void closeLog(string pEvent="Unknown")
         {
-            _xmlLog.closeLog();
+            _xmlLog.closeLog(pEvent);
         }
     }
 }
