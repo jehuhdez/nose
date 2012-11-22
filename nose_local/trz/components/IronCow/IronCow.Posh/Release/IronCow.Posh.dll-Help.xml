@@ -1,0 +1,792 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" schema="maml" xmlns="http://msh">
+  <command:command>
+    <command:details>
+      <command:name>Add-RtmTask</command:name>
+      <command:verb>add</command:verb>
+      <command:noun>rtmtask</command:noun>
+      <maml:description>
+        <maml:para>Adds a new RTM task.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Adds a new RTM task.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-RtmTask</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="false" position="1">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>The name of the task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Priority</maml:name>
+          <maml:description>
+            <maml:para>The priority of the task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">IronCow.TaskPriority</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Due</maml:name>
+          <maml:description>
+            <maml:para>The due date of the task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Recurrence</maml:name>
+          <maml:description>
+            <maml:para>The recurrence of the task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Estimate</maml:name>
+          <maml:description>
+            <maml:para>The estimated time for completing the task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>TaskList</maml:name>
+          <maml:description>
+            <maml:para>The task list to put the task in.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">IronCow.TaskList</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>TaskListName</maml:name>
+          <maml:description>
+            <maml:para>The name of the task list to put the task in.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Tags</maml:name>
+          <maml:description>
+            <maml:para>The tags to apply on the task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Url</maml:name>
+          <maml:description>
+            <maml:para>The URL annotation for the task.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="false" position="1">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>The name of the task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="False" globbing="False" pipelineInput="false" position="named">
+        <maml:name>Priority</maml:name>
+        <maml:description>
+          <maml:para>The priority of the task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="False">IronCow.TaskPriority</command:parameterValue>
+        <dev:type>
+          <maml:name>IronCow.TaskPriority</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>Due</maml:name>
+        <maml:description>
+          <maml:para>The due date of the task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>Recurrence</maml:name>
+        <maml:description>
+          <maml:para>The recurrence of the task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>Estimate</maml:name>
+        <maml:description>
+          <maml:para>The estimated time for completing the task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="False" globbing="False" pipelineInput="false" position="named">
+        <maml:name>TaskList</maml:name>
+        <maml:description>
+          <maml:para>The task list to put the task in.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="False">IronCow.TaskList</command:parameterValue>
+        <dev:type>
+          <maml:name>IronCow.TaskList</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>TaskListName</maml:name>
+        <maml:description>
+          <maml:para>The name of the task list to put the task in.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>Tags</maml:name>
+        <maml:description>
+          <maml:para>The tags to apply on the task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>Url</maml:name>
+        <maml:description>
+          <maml:para>The URL annotation for the task.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+    </command:parameters>
+  </command:command>
+  <command:command>
+    <command:details>
+      <command:name>Complete-RtmTask</command:name>
+      <command:verb>complete</command:verb>
+      <command:noun>rtmtask</command:noun>
+      <maml:description>
+        <maml:para>Completes an RTM task.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Completes an RTM task.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Complete-RtmTask</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+          <maml:name>TaskId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task to process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+          <maml:name>SeriesId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task series to process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+          <maml:name>ListId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task list to process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Complete-RtmTask</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByValue)" position="1">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>The task to process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">IronCow.Task</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+        <maml:name>TaskId</maml:name>
+        <maml:description>
+          <maml:para>The ID of the task to process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+        <maml:name>SeriesId</maml:name>
+        <maml:description>
+          <maml:para>The ID of the task series to process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+        <maml:name>ListId</maml:name>
+        <maml:description>
+          <maml:para>The ID of the task list to process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="False" globbing="False" pipelineInput="true (ByValue)" position="1">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>The task to process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="False">IronCow.Task</command:parameterValue>
+        <dev:type>
+          <maml:name>IronCow.Task</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+    </command:parameters>
+  </command:command>
+  <command:command>
+    <command:details>
+      <command:name>Get-RtmAuthenticationToken</command:name>
+      <command:verb>get</command:verb>
+      <command:noun>rtmauthenticationtoken</command:noun>
+    </command:details>
+    <maml:description>
+      <maml:para>Gets the authentication token from RTM.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-RtmAuthenticationToken</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByValue)" position="1">
+          <maml:name>Frob</maml:name>
+          <maml:description>
+            <maml:para>The frob value to use for getting the authentication token.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>SaveUserSettings</maml:name>
+          <maml:description>
+            <maml:para>Whether to save the authentication token in the user settings.</maml:para>
+          </maml:description>
+          <command:parameterValue required="True" variableLength="False">System.Management.Automation.SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="true (ByValue)" position="1">
+        <maml:name>Frob</maml:name>
+        <maml:description>
+          <maml:para>The frob value to use for getting the authentication token.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="False" globbing="False" pipelineInput="false" position="named">
+        <maml:name>SaveUserSettings</maml:name>
+        <maml:description>
+          <maml:para>Whether to save the authentication token in the user settings.</maml:para>
+        </maml:description>
+        <command:parameterValue required="True" variableLength="False">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+    </command:parameters>
+  </command:command>
+  <command:command>
+    <command:details>
+      <command:name>Get-RtmAuthenticationUrl</command:name>
+      <command:verb>get</command:verb>
+      <command:noun>rtmauthenticationurl</command:noun>
+    </command:details>
+    <maml:description>
+      <maml:para>Run a web browser so that the user can authenticate with RTM.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-RtmAuthenticationUrl</maml:name>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Permissions</maml:name>
+          <maml:description>
+            <maml:para>The level of permissions to request.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">IronCow.AuthenticationPermissions</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>StartUrl</maml:name>
+          <maml:description>
+            <maml:para>Whether to automatically launch a web browser with the authentication URL.</maml:para>
+          </maml:description>
+          <command:parameterValue required="True" variableLength="False">System.Management.Automation.SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="False" variableLength="False" globbing="False" pipelineInput="false" position="named">
+        <maml:name>Permissions</maml:name>
+        <maml:description>
+          <maml:para>The level of permissions to request.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="False">IronCow.AuthenticationPermissions</command:parameterValue>
+        <dev:type>
+          <maml:name>IronCow.AuthenticationPermissions</maml:name>
+        </dev:type>
+        <dev:defaultValue>Delete</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="False" variableLength="False" globbing="False" pipelineInput="false" position="named">
+        <maml:name>StartUrl</maml:name>
+        <maml:description>
+          <maml:para>Whether to automatically launch a web browser with the authentication URL.</maml:para>
+        </maml:description>
+        <command:parameterValue required="True" variableLength="False">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+  </command:command>
+  <command:command>
+    <command:details>
+      <command:name>Get-RtmTask</command:name>
+      <command:verb>get</command:verb>
+      <command:noun>rtmtask</command:noun>
+      <maml:description>
+        <maml:para>Gets RTM tasks based on various criteria.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Gets RTM tasks.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-RtmTask</maml:name>
+        <command:parameter required="False" globbing="False" pipelineInput="true (ByValue)" position="1">
+          <maml:name>Filter</maml:name>
+          <maml:description>
+            <maml:para>The search query to use to get the tasks.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>IncompleteOnly</maml:name>
+          <maml:description>
+            <maml:para>Controls whether only incomplete tasks are returned. This parameter is ignored if you use the "status:" operator in the filter parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">System.Boolean</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-RtmTask</maml:name>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Filter</maml:name>
+          <maml:description>
+            <maml:para />
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="False" pipelineInput="false" position="named">
+          <maml:name>ListId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task list from which to get the tasks.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>IncompleteOnly</maml:name>
+          <maml:description>
+            <maml:para />
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">System.Boolean</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-RtmTask</maml:name>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>Filter</maml:name>
+          <maml:description>
+            <maml:para />
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="True" pipelineInput="false" position="named">
+          <maml:name>ListName</maml:name>
+          <maml:description>
+            <maml:para>The name of the task list from which to get the tasks. Wildcards are supported.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>IncompleteOnly</maml:name>
+          <maml:description>
+            <maml:para />
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">System.Boolean</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-RtmTask</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="false" position="named">
+          <maml:name>ListId</maml:name>
+          <maml:description>
+            <maml:para />
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="False" pipelineInput="false" position="named">
+          <maml:name>SeriesId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task series from which to get the tasks.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="False" globbing="False" pipelineInput="false" position="named">
+          <maml:name>IncompleteOnly</maml:name>
+          <maml:description>
+            <maml:para />
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">System.Boolean</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-RtmTask</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="false" position="named">
+          <maml:name>ListId</maml:name>
+          <maml:description>
+            <maml:para />
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="False" pipelineInput="false" position="named">
+          <maml:name>SeriesId</maml:name>
+          <maml:description>
+            <maml:para />
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="False" pipelineInput="false" position="named">
+          <maml:name>TaskId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task to get.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="False" variableLength="True" globbing="False" pipelineInput="true (ByValue)" position="1">
+        <maml:name>Filter</maml:name>
+        <maml:description>
+          <maml:para>The search query to use to get the tasks.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>ListId</maml:name>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>SeriesId</maml:name>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="false" position="named">
+        <maml:name>TaskId</maml:name>
+        <maml:description>
+          <maml:para>The ID of the task to get.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="True" pipelineInput="false" position="named">
+        <maml:name>ListName</maml:name>
+        <maml:description>
+          <maml:para>The name of the task list from which to get the tasks. Wildcards are supported.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="False" variableLength="False" globbing="False" pipelineInput="false" position="named">
+        <maml:name>IncompleteOnly</maml:name>
+        <maml:description>
+          <maml:para />
+        </maml:description>
+        <command:parameterValue required="False" variableLength="False">System.Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Boolean</maml:name>
+        </dev:type>
+        <dev:defaultValue>True</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+  </command:command>
+  <command:command>
+    <command:details>
+      <command:name>Get-RtmTaskList</command:name>
+      <command:verb>get</command:verb>
+      <command:noun>rtmtasklist</command:noun>
+      <maml:description>
+        <maml:para>Gets RTM task lists based on various criteria.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Gets RTM task lists.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-RtmTaskList</maml:name>
+        <command:parameter required="False" globbing="True" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>The name of the task list to get. Wildcards are supported.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-RtmTaskList</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+          <maml:name>Id</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task list to get.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-RtmTaskList</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>The type of task lists to get.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">IronCow.TaskListFlags</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="False" variableLength="True" globbing="True" pipelineInput="true (ByValue, ByPropertyName)" position="1">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>The name of the task list to get. Wildcards are supported.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue>Null</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+        <maml:name>Id</maml:name>
+        <maml:description>
+          <maml:para>The ID of the task list to get.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="False" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+        <maml:name>Type</maml:name>
+        <maml:description>
+          <maml:para>The type of task lists to get.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="False">IronCow.TaskListFlags</command:parameterValue>
+        <dev:type>
+          <maml:name>IronCow.TaskListFlags</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+    </command:parameters>
+  </command:command>
+  <command:command>
+    <command:details>
+      <command:name>Test-RtmAuthenticationToken</command:name>
+      <command:verb>test</command:verb>
+      <command:noun>rtmauthenticationtoken</command:noun>
+    </command:details>
+    <maml:description>
+      <maml:para>Tests whether the user is authenticated with RTM.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Test-RtmAuthenticationToken</maml:name>
+        <command:parameter required="False" globbing="False" pipelineInput="true (ByValue)" position="1">
+          <maml:name>Token</maml:name>
+          <maml:description>
+            <maml:para>The token to test.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="False" variableLength="True" globbing="False" pipelineInput="true (ByValue)" position="1">
+        <maml:name>Token</maml:name>
+        <maml:description>
+          <maml:para>The token to test.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue>Null</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+  </command:command>
+  <command:command>
+    <command:details>
+      <command:name>Uncomplete-RtmTask</command:name>
+      <command:verb>uncomplete</command:verb>
+      <command:noun>rtmtask</command:noun>
+      <maml:description>
+        <maml:para>Uncompletes an RTM task.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Uncompletes an RTM task.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Uncomplete-RtmTask</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+          <maml:name>TaskId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task to process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+          <maml:name>SeriesId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task series to process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+          <maml:name>ListId</maml:name>
+          <maml:description>
+            <maml:para>The ID of the task list to process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Uncomplete-RtmTask</maml:name>
+        <command:parameter required="True" globbing="False" pipelineInput="true (ByValue)" position="1">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>The task to process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="False" variableLength="False">IronCow.Task</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+        <maml:name>TaskId</maml:name>
+        <maml:description>
+          <maml:para>The ID of the task to process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+        <maml:name>SeriesId</maml:name>
+        <maml:description>
+          <maml:para>The ID of the task series to process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="True" globbing="False" pipelineInput="true (ByPropertyName)" position="named">
+        <maml:name>ListId</maml:name>
+        <maml:description>
+          <maml:para>The ID of the task list to process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="True">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="True" variableLength="False" globbing="False" pipelineInput="true (ByValue)" position="1">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>The task to process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="False" variableLength="False">IronCow.Task</command:parameterValue>
+        <dev:type>
+          <maml:name>IronCow.Task</maml:name>
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+    </command:parameters>
+  </command:command>
+</helpItems>

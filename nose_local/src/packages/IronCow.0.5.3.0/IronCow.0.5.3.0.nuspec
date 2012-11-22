@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>IronCow</id>
+    <version>0.5.3.0</version>
+    <title>IronCow</title>
+    <authors>Ludovic Chabant</authors>
+    <owners>Ludovic Chabant</owners>
+    <licenseUrl>http://ironcow.codeplex.com/license</licenseUrl>
+    <projectUrl>httphttp://ironcow.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>IronCow is a library wrapping the Remember The Milk REST API into an MVVM-friendly .NET API.</description>
+    <summary>IronCow is a library wrapping the Remember The Milk REST API into an MVVM-friendly .NET API.</summary>
+    <tags>rtm remember milk mvvm wpf silverlight api rest library</tags>
+  </metadata>
+</package>
