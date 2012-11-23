@@ -1,4 +1,8 @@
 NoseCloud::Application.routes.draw do
+  get "main/import"
+
+  get "main/retrieve"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
